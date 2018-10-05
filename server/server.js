@@ -44,9 +44,6 @@ app.get("/api/product/guitars", (req, res) => {
     });
 });
 
-// By Sales
-// /guitars?sortBy=sold&order=desc&limit=4
-
 app.post("/api/product/guitar", auth, admin, (req, res) => {
   const guitar = new Guitar(req.body);
   guitar.save((err, doc) => {
@@ -164,7 +161,7 @@ app.post("/api/users/login", (req, res) => {
     });
   });
 });
-app.post("/api/users/logout", auth, (req, res) => {
+app.get("/api/users/logout", auth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err, doc) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).send({
