@@ -23,7 +23,7 @@ const Button = props => {
 
       case "cart_link":
         template = (
-          <div class="bag_link" onClick={() => props.runAction()}>
+          <div className="bag_link" onClick={() => props.runAction()}>
             <FontAwesomeIcon icon={faShoppingBag} />
           </div>
         );

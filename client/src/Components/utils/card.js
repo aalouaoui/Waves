@@ -12,7 +12,6 @@ class Card extends Component {
 
   render() {
     const props = this.props;
-    console.log(props);
     return (
       <div className={`card_item_wrapper ${props.grid}`}>
         <div
@@ -28,7 +27,11 @@ class Card extends Component {
             <div className="name">{props.name}</div>
             <div className="price">{props.price}</div>
           </div>
-          {props.grid ? <div className="description">Lorem ipsum</div> : null}
+          {props.grid ? (
+            <div className="description">
+              <p>{props.description}</p>
+            </div>
+          ) : null}
           <div className="actions">
             <div className="button_wrapp">
               <Button
