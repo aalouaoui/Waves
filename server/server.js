@@ -8,7 +8,8 @@ const app = express();
 const port = process.env.PORT || 3002;
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE);
+//mongoose.connect(process.env.DATABASE);
+mongoose.connect("mongodb://root:root123@ds157923.mlab.com:57923/waves");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
